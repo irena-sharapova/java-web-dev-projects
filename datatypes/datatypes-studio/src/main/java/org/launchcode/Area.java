@@ -9,7 +9,7 @@ public class Area {
         System.out.println("Enter a radius:");
         double radius = input.nextDouble();
 
-      //  double pi = Math.PI;
+       //  double pi = Math.PI;
 
        double areaCircle = Circle.getArea(radius);
         System.out.println("Your circle area " + areaCircle + "cm\u00B2");
