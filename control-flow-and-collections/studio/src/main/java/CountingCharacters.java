@@ -9,17 +9,17 @@ public class CountingCharacters {
                 + "equation to equal zero. Once you’ve done that, it’s pretty straightforward from there.";
 
         char[] charArray = myString.toCharArray();
-        HashMap<Character, Integer> charCountMap = new HashMap<>();
+        HashMap<Character, Integer> charCount = new HashMap<>();
 
         for(char letter : charArray) {
-            if (charCountMap.containsKey(letter)) {
-                charCountMap.put(letter,charCountMap.get(letter) + 1);
+            if (charCount.containsKey(letter)) {
+                charCount.put(letter,charCount.get(letter) + 1);
             } else {
-                charCountMap.put(letter,1);
+                charCount.put(letter,1);
             }
         }
 
-        for (Map.Entry<Character, Integer> count : charCountMap.entrySet()) {
+        for (Map.Entry<Character, Integer> count : charCount.entrySet()) {
             System.out.println(count.getKey() +": " + count.getValue());
         }
     }
