@@ -1,7 +1,7 @@
 package org.launchcode;
 
 import java.util.ArrayList;  // Import ArrayList
-import java.util.Scanner;
+
 
 public class Course {
     private String topic;
