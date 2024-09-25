@@ -11,7 +11,6 @@ public class Computer {
         this.owner = owner;
     }
 
-
     public void powerOn() {
         System.out.println(("is Power ON"));
     }

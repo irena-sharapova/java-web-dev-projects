@@ -6,8 +6,8 @@ public class SmartPhone extends Computer {
         this.weight =  "0.5lbs";
     }
 
-    public void haveNumber(String phoneNumber){
-        phoneNumber = "223-333-333-666";
+    public void haveNumber(){
+       String phoneNumber = "223-333-333-666";
         System.out.println(phoneNumber);
     }
 

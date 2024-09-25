@@ -7,8 +7,11 @@ public class Laptop extends Computer {
     }
 
     public void foldOrNot(Boolean folded ){
-        folded = true;
+       if (folded) {
         System.out.println("Laptop is folded ");
+    } else {
+            System.out.println("Laptop is Not folded ");
+       }
     }
 
     public String getWeight() {
