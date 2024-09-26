@@ -1,6 +1,8 @@
+package Questions;
+
 public class Choice {
-    public class Choice {
-        private final String content;
+
+        private String content;
         private final boolean correct;
 
         public Choice(String content, boolean correct) {
@@ -12,16 +14,13 @@ public class Choice {
             this(content, false);
         }
 
-        public String getContent
-
-        {
+        public String getContent() {
             return content;
         }
 
-        public boolean is
-
-        correct() {
+        public boolean isCorrect() {
             return correct;
         }
     }
-}
+
+

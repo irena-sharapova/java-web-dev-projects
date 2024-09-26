@@ -1,32 +1,33 @@
+package Questions;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-public class Questions {
+    public abstract class Questions{
+        private String questions;
+        private final HashMap<Integer, Choice> choiceMap = new HashMap<>();
+        private int maxResponses = 1;
 
-    public abstract class Question {
-        private final String question;
-        private final HashMap<Integer, Choice> choiseMap = new HashMap<>;
-        private int maxResponces = 1;
-
-        public Question(String question, Choice[] choiceArray) {
-            this.question = question;
+        public Questions(String questions, Choice[] choiceArray) {
+            this.questions = questions;
+            createRandomizedChoiceMap(choiceArray);
         }
 
-        public String getQuestion() {
-            return question;
+        public String getQuestions() {
+            return questions;
         }
 
-        public HashMap<Integer, Choice> getChoiseMap() {
-            return choiseMap;
+        public HashMap<Integer, Choice> getChoiceMap() {
+            return choiceMap;
         }
 
-        public int getMaxResponces() {
-            return maxResponces;
+        public int getMaxResponses() {
+            return maxResponses;
         }
 
-        public void setMaxResponces(int maxResponces) {
-            this.maxResponces = maxResponces;
+        public void setMaxResponses(int maxResponses) {
+            this.maxResponses = maxResponses;
         }
 
         @Override
@@ -34,14 +35,14 @@ public class Questions {
 
         void createRandomizedChoiceMap(Choice[] choiceArray){
             ArrayList<Choice> choiceList = new ArrayList<>();
-            Collections.addAll(choiceList, chiceArray);
+            Collections.addAll(choiceList, choiceArray);
             Collections.shuffle(choiceList);
             for (int i=0; i< choiceList.size(); i++){
                 choiceMap.put(i+1, choiceList.get(i));
             }
         }
 
-        String getFormatedChoises() {
+        String getFormattedChoices() {
             StringBuilder formattedChoices = new StringBuilder();
             String newLine = System.lineSeparator();
             for (int choiceNum : choiceMap.keySet()) {
@@ -54,10 +55,10 @@ public class Questions {
         public boolean isInvalid(String resp) {
             try {
                 int respInt = Integer.parseInt(resp);
-                return respInt <0 || respInt > choiseMap.size();
-            } catch (NumberFormatException 0) {
+                return respInt <0 || respInt > choiceMap.size();
+            } catch (NumberFormatException e) {
                 return true;
             }
         }
     }
-}
+
